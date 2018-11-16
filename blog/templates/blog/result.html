@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}post_all.html{% endblock %}
+
+{% block content %}
+
+<div id="content" style="color:black;" ><br></br>
+    <center><img src="/sinabro/static/img/p.png" width="200" height="100">
+        
+        <h1>< 나의 심리 진단 결과 ></h1></center>
+	    
+	     <br><center><h2>당신의 상태는 {{ result }} 입니다.</h2></center></br>
+	     <center><br><h5> 우울장애의 주요 증상으로는 의욕저하 우울감이며 지속적인 우울감은 다양한 인지와 정신,<br>
+	신체적 증상을 일으켜 일상 생활에도 영향을 미치게 됩니다.</h5></br></br></center>
+
+   
+	
+	<br><center><h5>※우울증 자가 치료 방법※</h5></center>
+	<center><h6><li>첫째, 충분한 휴식</li>
+				<li>둘째, 규칙적인 생활</li>
+				<li>셋째, 주변사람들과의 대화</li>
+				<li>넷째, 편안한 음악 감상 & 명상</li>
+				<li>다섯째, 목표 정하기</li>
+        </h6></center></br>
+	
+	<center><br></br>
+   	 <img src="/sinabro/static/img/f.png" width="60" height="60">
+		<a href="{% url 'consultants' 1 %}" style="text-decoration: none; color: black"><h2>상담 받으러가기</h2></a></center>
+
+</div>
+{% endblock %}

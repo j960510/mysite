@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block title %}post_all.html{% endblock %}
+
+{% block content %}
+
+<div id="content" style="color:black;"><br></br>
+    <center><img src="/sinabro/static/img/p.png" width="200" height="100">
+        
+        <h1>< 나의 심리 진단 결과 ></h1></center>
+	    
+	     <br><center><h2>당신의 상태는 {{ result2 }} 입니다.</h2></center></br>
+	     <center><br><h5> 
+공황 장애란 심한 불안 발작과 이에 동반되는 다양한 신체 증상들이 아무런 예고 없이 갑작스럽게 발생하는
+ 불안장애의 하나입니다.
+ 공황장애는 충분히 완치할 수 있는 질환이지만 방치할 경우 우울증이나 조울증으로 이어질 수 있고 나아가 자살이라는 극단적인 선택까지 할 수 있어 조기 치료가 매우 중요합니다. </h5></br></br></center>
+
+   
+	
+	<br><center><h5>공황장애가   잘 나타나는 장소</h5></center>
+	<center><h6><li>● 사람이 많이 있는 곳</li>
+				<li>● 광장,강당처럼 넓고 트인 곳</li>
+				<li>● 지하실 같이 닫힌 곳</li>
+				<li>● 자동차,지하철,비행기 안</li>
+				<li>● 낯선 장소</li>
+				<li>● 집에 혼자 있을 때</li>
+				<li>● 에스컬레이터</li>
+        </h6></center></br>
+	
+	<center><br></br>
+   	 <img src="/sinabro/static/img/f.png" width="60" height="60">
+		<a href="{% url 'consultants' 1 %}" style="text-decoration: none; color: black"><h2>상담 받으러가기</h2></a></center>
+
+</div>
+{% endblock %}

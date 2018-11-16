@@ -1,0 +1,17 @@
+*.py[co]
+.*.sw[po]
+.venv
+db.sqlite3
+.idea
+local_settings.py
+/static
+/log
+__pycache__
+/credentials.csv
+lambda.zip
+temp_deploy/
+/run.sh
+flier_venv
+*.rdb
+/shop_image
+/media/

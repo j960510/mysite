@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+ {% block title %}post_search.html{% endblock %}
+
+ {% block content %}
+
+<div id="content" style="margin-top:30px;">
+ <h1>검색결과</h1>
+ 
+ <form class="form-inline my-2 my-lg-0" action="." method="post"> {% csrf_token %}
+    {{ form.as_table }}
+ <button class="btn btn-outline-success my-2 my-sm-0" type="submit" value="검색">Search</button>
+</form>
+
+
+ <br/> <br/> 
+ 
+ {% if object_list %}
+ {% for consultant in object_list %}
+ 
+    <h2><a href="{% url 'consultant_detail' consultant.id %}">{{ consultant.name }}</a></h2>
+
+    <p> {{ consultant.description }}</p> 
+ 
+{% endfor %}
+ 
+ 
+ {% elif search_term %}
+<b><i>Search Word({{ search_term }}) 검색결과가 없습니다. </i></b>
+{% endif %}
+ </div>
+
+ {% endblock %}

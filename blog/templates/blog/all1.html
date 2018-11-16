@@ -1,0 +1,156 @@
+{% extends "base.html" %}
+
+{% block title %}post_all.html{% endblock %}
+
+{% block content %}
+<center><div id="content">
+<title>심리 테스트</title>
+<body>
+<br><h1>조울증 진단</h1><br>
+	<form name="PForm" method="post" action="{% url 'result1' %}">
+        {% csrf_token %}
+
+		<h4>※ 당신의 연령대를 고르세요. ※</h4>
+			<select name = "old" size = "1">
+				<option value = "10" selected>10대</option>
+				<option value = "20">20대</option>
+				<option value = "30">30대</option>
+				<option value = "40">40대</option>
+				<option value = "50">50대</option>
+			</select>
+<hr>
+	<p>
+		<h4>※ 당신의 성별을 고르세요. ※</h4>
+		<input type = "radio" name = "gender" value = "남자" checked>
+		남자
+		<input type = "radio" name = "gender" value = "여자">
+		여자
+	</p>
+<br>
+	<hr>
+	<br/>
+	<p>
+		<b><h4>※ 다음글을 보고 해당한다면 '예', 아니면 '아니오' 체크해주세요. ※</h4></b>
+		
+		1.평소보다 더욱 잠을 덜 잤거나 또는 잠잘 필요를 느끼지 않은 적이 있다. &nbsp; &nbsp; 
+		<input type = "radio" name = "food" value = "예" checked>
+		예
+		<input type = "radio" name = "food" value = "아니오">
+		아니오
+<br/>
+<br/>
+		2.지나치게 흥분하여 사람들에게 소리를 지르거나, 사람들과 싸우거나 말다툼을 한 적이 있다. &nbsp; &nbsp;
+		<input type = "radio" name = "annoying" value = "예" checked>
+		예
+		<input type = "radio" name = "annoying" value = "아니오">
+		아니오
+<br/>
+<br/>
+		3.평소보다 더욱 자신감에 찬 적이 있다.&nbsp; &nbsp;
+		<input type = "radio" name = "concentration" value = "예" checked>
+		예
+		<input type = "radio" name = "concentration" value = "아니오">
+		아니오
+<br/>
+<br/>
+		4.평소보다 말이 더 많거나 매우 빨라진 적이 있다.&nbsp; &nbsp;
+		<input type = "radio" name = "hope" value = "예" checked>
+		예
+		<input type = "radio" name = "hope" value = "아니오">
+		아니오
+<br/>
+<br/>
+
+		5.평소보다 더욱 에너지가 넘친 적이 있다.&nbsp; &nbsp;
+		<input type = "radio" name = "sin" value = "예" checked>
+		예
+		<input type = "radio" name = "sin" value = "아니오">
+		아니오
+<br/>
+<br/>
+
+		6.주위에서 벌어지는 일로 너무 쉽게 방해받았기 때문에 하던 일에 집중하기 어려웠거나 할 일을 계속해서 못한 적이 있다.&nbsp; &nbsp;
+		<input type = "radio" name = "hate" value = "예" checked>
+		예
+		<input type = "radio" name = "hate" value = "아니오">
+		아니오
+<br/>
+<br/>
+
+		7.생각이 머릿속에서 빠르게 돌아가는 것처럼 느꼈거나 마음을 차분하게 하지 못한 적이 있다.&nbsp; &nbsp;
+		<input type = "radio" name = "cry" value = "예" checked>
+		예
+		<input type = "radio" name = "cry" value = "아니오">
+		아니오
+<br/>
+<br/>
+
+		8.평소보다 더욱 사교적이거나 적극적(외향적)인 적이 있다.&nbsp; &nbsp;
+		<input type = "radio" name = "friend" value = "예" checked>
+		예
+		<input type = "radio" name = "friend" value = "아니오">
+		아니오
+<br/>
+<br/>
+
+
+		9. 돈 쓰는 문제로 자신이나 가족을 곤경에 빠뜨린 적이 있다.&nbsp; &nbsp;
+		<input type = "radio" name = "perfect" value = "예" checked>
+		예
+		<input type = "radio" name = "perfect" value = "아니오">
+		아니오
+<br/>
+<br/>
+
+		10.평소보다 더욱 활동적이었거나 더 많은 일을 한 적이 있다.&nbsp; &nbsp;
+		<input type = "radio" name = "comfortable" value = "예" checked>
+		예
+		<input type = "radio" name = "comfortable" value = "아니오">
+		아니오
+<br/>
+<br/>
+<hr>
+<br/>
+		<b><h4>※ 요즘에 힘든일이 있으신가요? 있으시다면 왜, 무엇때문에 그런지 구체적으로 적어주세요. ※</h4></b>
+	<textarea name = "ta1" rows = "7" cols = "40" wrap = "virtual">이곳에다가 적어주세요</textarea>
+
+<hr>
+
+ <button class="btn btn-outline-success my-2 my-sm-0" type="submit" value="제출하기">제출하기</button>
+</form></center>
+		
+</div>
+
+</div>
+		
+<!--{% for post in posts %}
+    <h2><a href='{{ post.get_absolute_url }}'>{{ post.title }}</a></h2>
+    {{ post.modify_date|date:"N d, Y" }}
+    <p>{{ post.description }}</p>
+{% endfor %}
+
+<br/>
+
+<div>
+    <span>
+        {% if page_obj.has_previous %}
+            <a href="?page={{ page_obj.previous_page_number }}">PreviousPage</a>
+        {% endif %}
+      
+        Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}
+      
+        {% if page_obj.has_next %}
+            <a href="?page={{ page_obj.next_page_number }}">NextPage</a>
+        {% endif %}
+    </span>
+
+</div>-->
+
+
+</div>
+
+
+</body>
+</html>
+
+{% endblock %}

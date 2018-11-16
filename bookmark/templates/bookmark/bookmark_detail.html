@@ -1,0 +1,123 @@
+{% extends "base.html" %}
+
+{% block title %}Django Bookmark Detail{% endblock %}
+
+{% block content %}
+
+<style type="text/css">  
+* {       margin: 0; padding: 0;     
+  letter-spacing: -.08em;  } 
+ article {       min-width: 320px;    
+   max-width: 800px;       padding: 50px;    
+   margin: 0 auto;       background: #fff;  } 
+ section {       display: none;       padding: 20px 0 0;  
+     border-top: 1px solid #ddd;  } 
+ input {       display: none;  }  label {       cursor: pointer;    
+   position: relative;       display: inline-block;    
+   background-color: #fff;       padding: 15px 25px;     
+  font-weight: 600;       text-align: center;       color: #bbb;  
+    border: 1px solid transparent;  }
+  input:checked + label {       color: #275395;  } 
+ input:checked + label span {       display: inline-block;   
+    width: 6px; height: 6px;       border-radius: 50%;    
+   background-color: #275395;       position: absolute;     
+  top: 10px; left: 26px;  } 
+ #tab1:checked ~ #content1, 
+ #tab2:checked ~ #content2, 
+ #tab3:checked ~ #content3, 
+ #tab4:checked ~ #content4 {       display: block;  }  
+</style>  <article>   
+ <input id="tab1" type="radio" name="tabs" checked />  
+  <label for="tab1">전문상담<span></span></label>   
+ <input id="tab2" type="radio" name="tabs" />   
+ <label for="tab2">일반상담<span></span></label>   
+ <input id="tab3" type="radio" name="tabs" />  
+  <label for="tab3">익명상담<span></span></label>  
+ 
+ <section id="content1">      
+  <p>룰라랄라</p>   
+ </section>   
+ 
+<section id="content2">      
+  
+ <p>
+
+<style type="text/css">
+.sub_news,.sub_news th,.sub_news td{border:0}
+.sub_news a{color:#ffffff;text-decoration:none}
+.sub_news{width:100%;border-bottom:1px solid #ffffff;color:#ffffff;font-size:12px;table-layout:fixed}
+.sub_news caption{display:none}
+.sub_news th{padding:5px 0 6px;border-top:solid 1px #ffffff;border-bottom:solid 1px #ffffff;background-color:#f1f1f4;color:#000000;font-weight:bold;line-height:20px;vertical-align:top}
+.sub_news td{padding:8px 0 9px;border-bottom:solid 1px #ffffff;text-align:center;line-height:18px;}
+.sub_news .date,.sub_news .hit{padding:0;font-family:Tahoma;font-size:11px;line-height:normal}
+.sub_news .title{text-align:left; padding-left:15px; font-size:13px;}
+.sub_news .title .pic,.sub_news .title .new{margin:0 0 2px;vertical-align:middle}
+.sub_news .title a.comment{padding:0;background:none;color:#f00;font-size:12px;font-weight:bold}
+.sub_news tr.reply .title a{padding-left:16px;background:url(J:/web/static/img/ic_reply.png) 0 1px no-repeat}
+</style>
+
+<div id="content">
+    
+
+<div id="content">
+    
+
+<!-- 리스트 게시판 시작-->
+
+<table class="sub_news" border="1" cellspacing="0" summary="게시판의 글제목 리스트">
+<caption>상담</caption>
+<colgroup>
+<col>
+<col width="110">
+<col width="100">
+<col width="80">
+</colgroup>
+<thead>
+<tr>
+<th scope="col">제목</th>
+<th scope="col">글쓴이</th>
+<th scope="col">날짜</th>
+<th scope="col">조회수</th>
+</tr>
+
+<tbody>
+<tr>
+<td class="title">
+<a href="#">상담합니다</a>
+<img width="13" height="12" class="pic" alt="첨부이미지" src="{J:/web/static/img/ic_pic.gif' %}"> <a class="comment" href="#">[5]</a> 
+<img width="10" height="9" class="new" alt="새글" src="{J:/web/static/img/ic_new.gif' %}">
+</td>
+<td class="name">글쓴이이름</td>
+<td class="date">2018/03/27</td>
+<td class="hit">1234</td>
+</tr>
+<tr class="reply">
+<td class="title" style="padding-left:30px;">
+<a href="#">답변입니다</a>
+</td>
+<td class="name">상담사</td>
+<td class="date">2018/03/14</td>
+<td class="hit">1234</td>
+</tr>
+<!-- tr이 제목 1줄입니다 보일 list 갯수만큼 li반복합니다.-->
+</tbody>
+
+</table>
+
+<!-- 리스트 게시판 끝-->
+
+</p>   
+ </section>  
+
+
+  <section id="content3">      
+  <p>될까요?</p>   
+ </section>   
+
+ </article>  
+
+
+
+</div>
+
+{% endblock %}

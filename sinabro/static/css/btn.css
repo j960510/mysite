@@ -1,0 +1,20 @@
+/* 버튼 */
+.btn{
+ display:inline-block;
+ border:0px solid #fff;
+ color:#fff !important;
+ background:#a477b3;
+ padding:7px 7px 3px 7px;
+ border-radius:5px;
+ font-size: 11pt;
+ text-decoration:none;
+ cursor:pointer
+}
+.btn:focus,.btn:hover {
+    text-decoration:none;
+    background: #a477b3;
+}
+
+.btn_primary{background:#a477b3;}
+.btn_danger{background:#7e5a8a;}
+

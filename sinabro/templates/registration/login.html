@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block title %}login.html{% endblock %}
+
+{% load staticfiles %}
+{% block extrastyle %}{% static "css/forms.css" %}{% endblock %}
+
+{% block content %}
+<div id="row" style="margin-top: 120px">
+    <div class="col-sm-12" style="color: black;"><br/>
+        <h1>로그인 </h1>
+        <form action="{% url 'login' %}" method="post">
+            {% csrf_token %}
+
+            {% if errors %}
+                <p class="errornote">잘못됐습니다. 다시 입력해주세요</p>
+            {% endif %}
+
+           
+<br/>
+             <fieldset class="aligned">
+                <div class="form-row">
+
+                  <h3> Username: <input id="id_username" type="text" name="username"></h3><br>
+                     </div>
+
+                <div class="form-row">
+                 <h3> Password: &nbsp<input id="id_password" type="password" name="password"></h3><br>
+                      </div>
+            </fieldset>
+            
+
+           
+            <div class="submit-row">
+                <center><input class="btn btn-primary"   type="submit" value="로그인"/></center>
+                <!-- input type="hidden" name="next" value="/" / -->
+                <input type="hidden" name="next" value="{{ next }}" />
+                <div/>
+            
+
+            <script type="text/javascript">document.getElementById('id_username').focus();</script>
+        </form>
+    </div>
+</div>
+{% endblock %}

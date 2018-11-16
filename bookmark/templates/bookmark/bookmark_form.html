@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+{% block title %}bookmark_form.html{% endblock %}
+
+{% load staticfiles %}
+{% block extrastyle %}{% static "css/forms.css" %}{% endblock %}
+
+{% block content %}
+<style>
+.btn{
+ display:inline-block;
+ border:0px solid #fff;
+ color:#fff !important;
+ background:#a477b3;
+ padding:7px 7px 3px 7px;
+ border-radius:5px;
+ font-size: 11pt;
+ text-decoration:none;
+ cursor:pointer
+}
+.btn:focus,.btn:hover {
+    text-decoration:none;
+    background: #a477b3;
+}
+
+.btn_primary{background:#a477b3;}
+.btn_danger{background:#7e5a8a;}
+<div id="content">
+</style>
+
+    <h1>Bookmark Create/Update - {{user}}</h1>
+
+    <form action="." method="post">{% csrf_token %}
+
+    {% if form.errors %}
+    <p class="errornote">Wrong! Please correct the error(s) below.</p>
+    {% endif %}
+
+    <p>This is a creation or update form for your bookmark.</p>
+
+    <fieldset class="aligned">
+
+        <div class="form-row">
+            {{ form.title.label_tag }} {{ form.title }}
+        </div>
+    
+        <div class="form-row">
+            {{ form.url.label_tag }} {{ form.url }}
+        </div>
+
+    </fieldset>
+
+    <div class="btn">
+        <input type="submit" value="Submit" id="btn"/>
+    </div>
+
+    <script type="text/javascript">document.getElementById('id_title').focus();</script>
+    </form>
+
+</div>
+{% endblock %}

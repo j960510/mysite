@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" type="text/css" href="/static/css/base.css" />
+    <link rel="stylesheet" type="text/css" href="/sinabro/static/css/btn.css" />
+    <link rel="stylesheet" type="text/css" href="" />
+
+    <title>시나브로</title>
+
+    
+</head>
+
+<body>
+  
+  <div id="header">
+    <h2 class="maintitle"></h2>
+
+    
+        <h4 class="welcome">환영합니다, None /
+            <a href="/accounts/logout/">로그아웃</a>
+        </h4>
+    
+
+</div>
+
+<div id="menu" >
+    <li><a href="/">메인</a></li>
+    <li><a href="/notices/">공지사항</a></li>
+    <li class="dropdown">
+        <a href="/consultants/pages/1/" class="dropbtn">상담</a>
+        <div class="header-content">
+
+            <a href="/users/me/consultant/requests/1/">상담내역</a>
+    </li>
+    <li class="dropdown">
+        <a href="/blog/" class="dropbtn">진단</a>
+        <div class="header-content">
+
+            <a href="/blog/">우울증</a>
+            <a href="../blog/templates/blog/post_all1.html">조울증</a>
+            <a href="../blog/templates/blog/post_all1.html">공황장애</a>
+    </li>
+    <li><a href="/blog/search/">사이트소개</a></li>
+    
+        <li><a href="/admin/">관리자</a></li>
+    
+</div>
+
+
+    <div class="container-fluid" style="margin-top: 55px;">
+        
+<div id="content">
+<title>심리 테스트</title>
+<body>
+<h1>나의 심리 진단</h1>
+	<form name="PForm" method="post" action="/blog/result/">
+        <input type="hidden" name="csrfmiddlewaretoken" value="B5rd2iGUuIs8ce4sxMAwjXT793aWxN3Zhh6SPrUatmFOqQqfwtPTRQ5hpbdX1jQw">
+
+		<h4>※ 당신의 연령대를 고르세요. ※</h4>
+			<select name = "old" size = "1">
+				<option value = "10" selected>10대</option>
+				<option value = "20">20대</option>
+				<option value = "30">30대</option>
+				<option value = "40">40대</option>
+				<option value = "50">50대</option>
+			</select>
+<hr>
+	<p>
+		<h4>※ 당신의 성별을 고르세요. ※</h4>
+		<input type = "radio" name = "gender" value = "남자" checked>
+		남자
+		<input type = "radio" name = "gender" value = "여자">
+		여자
+	</p>
+<br>
+	<hr>
+	<br/>
+	<p>
+		<b><h4>※ 다음글을 보고 해당한다면 '예', 아니면 '아니오' 체크해주세요. ※</h4></b>
+		
+		1.식성에 변화가 있다. &nbsp; &nbsp; 
+		<input type = "radio" name = "food" value = "예" checked>
+		예
+		<input type = "radio" name = "food" value = "아니오">
+		아니오
+<br/>
+<br/>
+		2.보통 때보다 더 짜증이 난다. &nbsp; &nbsp;
+		<input type = "radio" name = "annoying" value = "예" checked>
+		예
+		<input type = "radio" name = "annoying" value = "아니오">
+		아니오
+<br/>
+<br/>
+		3.주의력과 집중력이 저하되었다.&nbsp; &nbsp;
+		<input type = "radio" name = "concentration" value = "예" checked>
+		예
+		<input type = "radio" name = "concentration" value = "아니오">
+		아니오
+<br/>
+<br/>
+		4.미래에 희망이 없다고 느낀다.&nbsp; &nbsp;
+		<input type = "radio" name = "hope" value = "예" checked>
+		예
+		<input type = "radio" name = "hope" value = "아니오">
+		아니오
+<br/>
+<br/>
+
+		5.이전보다 죄책감을 더 많이 느낀다.&nbsp; &nbsp;
+		<input type = "radio" name = "sin" value = "예" checked>
+		예
+		<input type = "radio" name = "sin" value = "아니오">
+		아니오
+<br/>
+<br/>
+
+		6.보통 때 보다 나 스스로가 더 싫다고 느낀다.&nbsp; &nbsp;
+		<input type = "radio" name = "hate" value = "예" checked>
+		예
+		<input type = "radio" name = "hate" value = "아니오">
+		아니오
+<br/>
+<br/>
+
+		7.이전보다 더 자주 운다.&nbsp; &nbsp;
+		<input type = "radio" name = "cry" value = "예" checked>
+		예
+		<input type = "radio" name = "cry" value = "아니오">
+		아니오
+<br/>
+<br/>
+
+		8.나는 친구가 거의 없다고 느껴진다.&nbsp; &nbsp;
+		<input type = "radio" name = "friend" value = "예" checked>
+		예
+		<input type = "radio" name = "friend" value = "아니오">
+		아니오
+<br/>
+<br/>
+
+
+		9.다른 사람들이 나에게 완벽하기를 바라는 것 같다.&nbsp; &nbsp;
+		<input type = "radio" name = "perfect" value = "예" checked>
+		예
+		<input type = "radio" name = "perfect" value = "아니오">
+		아니오
+<br/>
+<br/>
+
+		10.누군가와 함게 있는것 보다 혼자서 있는게 더 편하다고 느낀다.&nbsp; &nbsp;
+		<input type = "radio" name = "comfortable" value = "예" checked>
+		예
+		<input type = "radio" name = "comfortable" value = "아니오">
+		아니오
+<br/>
+<br/>
+<hr>
+<br/>
+		<b><h4>※ 요즘에 힘든일이 있으신가요? 있으시다면 왜, 무엇때문에 그런지 구체적으로 적어주세요. ※</h4></b>
+	<textarea name = "ta1" rows = "7" cols = "40" wrap = "virtual">이곳에다가 적어주세요</textarea>
+
+<hr>
+
+<input type="submit" value="제출하기">
+</form>
+		
+</div>
+
+</div>
+		
+<!--
+
+<br/>
+
+<div>
+    <span>
+        
+      
+        Page 1 of 1
+      
+        
+    </span>
+
+</div>-->
+
+
+</div>
+
+
+</body>
+</html>
+
+
+    </div>
+
+   
+</body>
+
+</html>

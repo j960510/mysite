@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+
+from sinabro.models import User
+
+{% block title %}mypage.html{% endblock %}
+
+
+  <style>
+      .a {
+        font-size: 50px;
+        color: #000;
+      }
+
+      .b {
+
+        font-size: 50px;
+        color: #000;
+		
+      }
+	   .my-box { border:1px solid; padding:10px; }
+
+    </style>
+
+{% load staticfiles %}
+{% block extrastyle %}{% static "css/forms.css" %}{% endblock %}
+
+{% block content %}
+
+    <div id="content">
+	<center>
+
+	  
+		<center><h2><b>{{ user.username }}님의 Mypage</b></h2>
+		   
+		   
+	
+	   <br/><div  class ="col-sm-6" style=" border: solid 3px gray;  padding:20px;">
+	   <span> <p class="a"><i class="fas fa-address-card" style="font-size:50px;"></i><h3>나의 프로필</h3></p></span>
+			
+	   <p>아이디_ : {{ user.username }}님</p>
+	   <p>이름_ : {{ user.name }}</p>
+	   <p>나이_ :  {{ user.birthday }}</p>
+	   <p>전화_ : {{ user.phone_number }}</p>
+	   <br/>
+	<a href="/password/" class="btn btn-primary"  >수정하기</a>
+	   
+	   <br/><center>
+	   <hr style="border: solid 2px gray; "><br></center>
+	   <div class="col-sm-6" style="color: gray; ">
+		   
+	   <p class="b"><i class="fas fa-align-justify" style="font-size:50px;"></i></p>
+		<div class="form-group" style="color: black; ">
+	   <h3>나의 상담내역</h3><br/>
+	   <div style=" border: solid 3px gray;  padding:20px;">
+	   <a href="{% url 'consultations' 1 %}" style = "float: center;">나의 상담내역 보러가기</a></div>
+
+
+
+           
+<br/>
+
+    </div>
+
+   
+</body>
+
+{% endblock%}

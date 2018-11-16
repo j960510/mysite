@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}post_all.html{% endblock %}
+
+{% block content %}
+
+<div id="content" style="color:black;"><br></br>
+    <center><img src="/sinabro/static/img/p.png" width="200" height="100">
+        
+        <h1>< 나의 심리 진단 결과 ></h1></center>
+	    
+	     <br><center><h2>당신의 상태는 {{ result1 }} 입니다.</h2></center></br>
+	     <center><br><h5> 양극성 장애의 원인은 유전적 요인, 스트레스, 뇌 구조 및 기능의 이상이다. 특히 80%가 유전적 요소에 의한 것이라는 연구 결과가 있으니 가족 중에 병력이 있다면 바로 상담을 받아야 합니다.</h5></br></br></center>
+
+   
+	
+	<br><center><h5>※ 조울증  자가 치료 방법  ※</h5></center>
+	<center><h6><li>첫째, 적당한 수면을 취해야 됩니다. </li>
+				<li>둘째, 규칙적인 식사를 하셔야 됩니다.</li>
+				<li>셋째, 과도한 스트레스를 받지 않습니다.</li>
+				<li>넷째, 가족과의 많은 대화가 필요합니다.</li>
+				<li>다섯째, 적당한 운동이 필요합니다.</li>
+        </h6></center></br>
+	
+	<center><br></br>
+   	 <img src="/sinabro/static/img/f.png" width="60" height="60">
+		<a href="{% url 'consultants' 1 %}" style="text-decoration: none; color:black;"><h2>상담 받으러가기</h2></a></center>
+
+</div>
+{% endblock %}
