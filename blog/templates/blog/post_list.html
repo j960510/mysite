@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block title %}post_all.html{% endblock %}
+{% load staticfiles %}
+
+{% block content %}
+        <div class="content container">
+            <div class="row">
+               {% for post in posts %}
+                    <div>
+                        <p>published: {{ post.published_date }}</p>
+                        <h1><a href="">{{ post.title }}</a></h1>
+                        <p>{{ post.text|linebreaksbr }}</p>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+
+{% endblock %}
+
+
+

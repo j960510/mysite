@@ -1,0 +1,92 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+    <form action="{% url 'payment' consultation.id %}" method="POST">
+        {% csrf_token %}
+        <div class="row" style="margin-top: 100px; ">
+            <div class="col-sm-12">
+                <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true"
+                           style="background-color:#7e5a8a;">휴대폰결제</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false"
+                           style="background-color:#7e5a8a;">무통장입금</a>
+                    </li>
+                </ul>
+                    <div class="tab-content" id="pills-tabContent">
+                    <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab"
+                         >
+                        <div class="card">
+                            <div class="card-header">
+                                {{ consultation.consultant.name }} 상담사
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">결제(휴대폰)</h5>
+                                <p class="card-text">
+                                    <b>$ 비용</b>: {{ consultation.consultant.price }}<br>
+                                    <b>예약 날짜</b>: {{ consultation.reservation_time }}
+                                </p>
+                                <p>
+                                    <lable for="id_name">
+                                        휴대폰 번호:
+                                    </lable>
+                                    <input id="id_name" type="text" name="phone_number"><br>
+                                    <lable for="id_name">
+                                        폰승인 번호:
+                                    </lable>
+                                    <input id="id_name" type="text" name="name">
+                                        <button type="button" class="btn btn-sm btn-primary" id="validation_code">승인번호전송</button><br>
+                                    <lable for="id_name">
+                                        이메일 주소:
+                                    </lable>
+                                    <input id="id_name" type="email" name="email"><br>
+                                </p>
+                                <button type="submit" class="btn btn-primary">결제하기</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab"
+                         >
+                        <div class="card">
+                            <div class="card-header">
+                                {{ consultation.consultant.name }} 상담사
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">결제(무통장)</h5>
+                                <p class="card-text">
+                                    <b>$ 비용</b>: {{ consultation.consultant.price }}<br>
+                                    <b>예약 날짜</b>: {{ consultation.reservation_time }}
+                                </p>
+                                <p>
+                                    <lable for="id_name">
+                                        입금자 이름:
+                                    </lable>
+                                    <input id="id_name" type="text" name="name"><br>
+                                    <lable for="id_name">
+                                        휴대폰 번호:
+                                    </lable>
+                                    <input id="id_name" type="text" name="phone_number"><br>
+                                    <lable for="id_name">
+                                        이메일 주소:
+                                    </lable>
+                                    <input id="id_name" type="email" name="email"><br>
+                                </p>
+                                <button type="submit" class="btn btn-primary">결제하기</button>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </form>
+
+    <script>
+        $('#validation_code').click(function() {
+            alert('승인번호: 12345')
+        })
+    </script>
+{% endblock %}

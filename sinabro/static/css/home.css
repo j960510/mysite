@@ -1,0 +1,19 @@
+.table tr td{
+    vertical-align:middle; width:30%;
+    color: white;
+}
+
+
+div#content_home {
+    position: absolute;
+    top: 80px;
+    left: 110px;
+    right: 110px;
+	color: #ffffff;
+}
+
+div#homeimg {
+    background: c7a3bd;
+    padding: -10px 0 0px 0;
+    text-align: center;
+}

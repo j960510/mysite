@@ -1,0 +1,55 @@
+{% load i18n admin_urls %}
+{% load staticfiles %}
+{% include "admin/change_list.html"%}
+   
+
+
+<div id="content">
+  <h1>매출내역 - {{ user.username }}님</h1>
+  
+<body>
+  
+  <style>
+    #pay {
+      padding: 5px 10px;
+      width:1000px;
+      height:100px;
+    }
+    
+  </style>
+   
+   
+  <table id="pay">
+    <thead>
+    <tr>
+      <th scope="col" style="background:#a477b3; color:#fff;">매출내역</th>
+      <th scope="col" style="background:#a477b3; color:#fff;">수수료</th>
+      <th scope="col" style="background:#a477b3; color:#fff;">수익</th>
+      <th scope="col" style="background:#a477b3; color:#fff;">총합계</th>
+    </tr>
+  </thead>
+    
+ <tbody>
+    <tr>
+      <th scope="row">#</th>
+      <td> 10% </td>
+      <td>{{ div }}원</td>
+      <td>{{ sum }}원</td>
+    </tr>
+      
+    <tr>
+      <th scope="row">#</th>
+      <td>수수료는 결제금액의 10%</td>
+      <td>{{ obj.price }}</td>
+      <td></td>
+    </tr>
+
+  </tbody>
+  </table>
+  </div> 
+  
+</body>
+  
+</div>
+
+

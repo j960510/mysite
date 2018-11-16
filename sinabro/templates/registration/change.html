@@ -1,0 +1,107 @@
+{% extends "base.html" %}
+
+from sinabro.models import User
+
+{% block title %}mypage.html{% endblock %}
+
+{% load staticfiles %}
+{% block extrastyle %}{% static "css/forms.css" %}{% endblock %}
+
+{% block content %}
+
+  
+  
+  <style>
+  
+ input, textarea, select, FORM
+ {
+   font-family:맑은고딕;
+   color: #7f7f7f;
+  font-size:1em;
+  border-radius:5px;
+  
+ }
+ 
+  h1
+ {
+   font-family:맑은고딕;
+  font-size:2.2em;
+  color: #000000;
+  
+ }
+ 
+ table, FORM
+ {
+  border:5px solid rgba(0, 0, 0, );
+  border-spacing:15px;
+ }
+      
+  p, h, td, tr
+ {
+   font-family:맑은고딕;
+  font-size:1em;
+  color: #000000;
+  
+ }
+  
+   
+  </style>
+
+
+
+
+<div style="background-color:#fff; margin-top:140px;">
+<form method="POST" action="" id="change-info">{% csrf_token %}
+	
+<center>
+ <br><h1>비밀번호 변경</h1><br>
+ <table boder = "" cellspacing = "1" >
+  <tr>
+  <td text-align="center">아이디 </td>
+  <td> 
+       <p> {{ user.username }} </p>
+   </td>
+  </tr>
+
+
+
+   <tr>
+   <td> 비밀번호 </td>
+   <td> 
+        {% csrf_token %}
+        <input type = "password" name="old_password" autofocus="" required="" id="id_old_password" placeholder="기존 비밀번호" /><br>
+  </td>
+  </tr>
+	
+   <td> 새 비밀번호 </td>
+   <td> 
+        {% csrf_token %}
+        <input type = "password" name="new_password1" autofocus="" required="" id="id_new_password1" placeholder="특수문자제외 8글자 이상" />
+  </td>
+  </tr>	 
+	 
+	 
+   <td> 비밀번호 확인 </td>
+   <td> 
+        {% csrf_token %}
+        <input type = "password" name="new_password2" autofocus="" required="" id="id_new_password2" placeholder="새 비밀번호 확인" /> 
+  </td>
+  </tr>	 
+	 
+	 
+
+</table>
+
+<br/>
+
+
+<button type="submit" class="btn btn-primary">수정</button>
+<a href="{% url 'main'  %}" class="btn btn_danger btn-md active" role="button" aria-pressed="true">취소</a>
+
+</center>
+</form>
+</div>
+
+
+
+{% endblock%}

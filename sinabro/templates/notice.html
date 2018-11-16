@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="row" style="margin-top: 150px; color: black;">
+        <table class="table" style="color: black">
+            <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">내용</th>
+                <th scope="col">날짜</th>
+            </tr>
+            </thead><br/>
+            <tbody>
+            {% for row in notices %}
+                <tr>
+                    <th scope="col">{{ forloop.counter }}</th>
+                    <th scope="col"><a href="{% url 'notice_detail' row.id %}" style="margin-top: 120px; color:black;">{{ row.text|truncatechars:30 }}</a></th>
+                    <th scope="col">{{ row.created_at }}</th>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

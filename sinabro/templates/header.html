@@ -1,0 +1,141 @@
+
+
+<div id="header">
+    <h2 class="maintitle">
+    <a href="http://t1804four4.pythonanywhere.com/" >
+    <img src="/sinabro/static/img/slogo.png" id="logo" alt="MyCorp" style="float:left; width:240px; height:80px;"/></a>
+    </h2>
+
+  <!--로그인메뉴 -->
+        
+          {% if user.is_authenticated %}
+        <h4 class="welcome">
+<div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+     <i class="fas fa-user-circle" style="font-size:30px;"></i> {{ user.username }}님
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+         <a class="dropdown-item" href="/mypage/" >MyPage</a>
+              <a class="dropdown-item" href="/accounts/logout/" >Logout</a>
+
+  </div>
+</div>
+
+      </h4> 
+
+
+   {% else %}
+
+
+
+        <h4 class="welcome">
+
+
+<div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <i class="fas fa-user-circle" style="font-size:30px;"></i> 비회원님
+            
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+   <a class="dropdown-item" href="/accounts/login/" >로그인</a>
+              <a class="dropdown-item" href="/accounts/register/" >회원가입</a>
+  </div>
+</div>
+
+      </h4>  
+       {% endif %}   
+    
+
+</div>
+
+
+
+<div id="menu" style="background:#563d7c;">
+<nav class="navbar navbar-expand-lg navbar-light" style=" background-color: #563d7c;">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+    
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+
+          <li class="nav-item active">
+            <a class="nav-link" href="/">Home<span class="sr-only">(current)</span></a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'notice' %}">공지사항</a>
+          </li>
+
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              상담
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="{% url 'consultants' 1 %}" style="color: #736094">상담사</a>
+              <a class="dropdown-item" href="{% url 'consultations' 1 %}" style="color: #736094">상담내역</a>
+            </div>
+            </li>
+  
+
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  진단
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="/blog/post0/" style="color: #736094">우울증</a>
+                  <a class="dropdown-item" href="/blog/post1/" style="color: #736094">조울증</a>
+                  <a class="dropdown-item" href="/blog/post2/" style="color: #736094">공황장애</a>
+                </div>
+              </li>
+
+
+            
+           <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="{% url 'consultants' 1 %}" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              문의
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="/blog/introdution/" style="color: #736094">사이트소개</a>
+              <a class="dropdown-item" href="/blog/search/" style="color: #736094">검색</a>
+            </div>
+          </li>           
+
+            
+             {% if user.is_staff %}
+            
+            <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Admin
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="/admin/" style="color: #736094">관리자</a>
+              <a class="dropdown-item" href="/admin/sinabro/paymentlog/" style="color: #736094">매출내역</a>
+            </div>
+          </li>       
+                {% endif %}
+
+         </ul>
+        
+        
+        
+        
+        
+        
+
+
+     
+         <form class="form-inline my-2 my-lg-0" action="{% url 'search' %}" method="post">{% csrf_token %}
+          <input class="form-control mr-sm-2" type="text" placeholder="" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit" value="검색">Search</button>
+        
+            
+        </form>
+      </div>
+    </nav>
+    
+        
+</div>
+
+

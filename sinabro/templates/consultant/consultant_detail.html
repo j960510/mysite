@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div id="wrapper"><br/><br/>
+<center>    <div class="row" style="margin-top: 100px;"></center>
+    <div class="col" style="text-align: left">
+            {% if consultant.profile_image %}
+                <img src="{{ consultant.profile_image.url }}" style="width: 400px; height: 400px; float:left; margin-right:50px; "/>
+            {% else %}
+                <img src="{% static 'img/park.jpg' %}" style="width: 400px; height: 400px; float:left; margin-right:50px; "/>
+            {% endif %}
+        </div>
+        <div class="col" style="vertical-align: center">
+            <h2 style="color: black">{{ consultant.name }}</h2>
+
+            <h4 style="color: black; margin-top: 50px"><b>상담사 소개</b></h4>
+            <h4 style="color: black">{{ consultant.description }}</h4>
+
+            <h5 style="color: black; margin-top: 50px"><b>학력</h5>
+            <p style="color: black">{{ consultant.education }}</p>
+
+            <h5 style="color: black; margin-top: 50px"><b>경력</b></h5>
+            <p style="color: black">{{ consultant.experience }}</p><br/><br/><br/>
+
+           <center>  <a href="{% url 'consulting_reservation' consultant.id %}" class="btn btn_primary btn-lg active" role="button" aria-pressed="true">예약하기</a></center> 
+    </div>
+{% endblock %}

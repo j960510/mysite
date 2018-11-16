@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_head %}
+
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+        {#datepicker 사용#}
+        $(document).ready(
+            function() {
+                $( "#datepicker" ).datepicker();
+            }
+        )
+    </script>
+{% endblock %}
+
+{% block content %}
+    <form action="{% url 'consultation' form.instance.id %}" method="POST">
+        {% csrf_token %}
+        <div class="row" style="margin-top: 120px;">
+            <div class="col-sm-6">
+                <lable for="datepicker" style="background-color: black;">
+                    <h2 style="color: white;">예약 날짜</h2>>
+                </lable>
+                {{ form.reservation_time }}
+                <textarea name="note" cols="40" rows="10" class="form-control" id="id_note">
+</textarea>
+            </div>
+            <div class="col-sm-6">
+                <lable for="id_region">
+                    <h2 style="color: white;">지역 선택</h2>>
+                </lable>
+                {{ form.region }}
+
+                <lable for="id_name">
+                    <h2 style="color: white; margin-top: 30px">이름</h2>>
+                </lable>
+                {{ form.name }}
+
+                <lable for="id_phone_number">
+                    <h2 style="color: black; margin-top: 30px">연락처</h2>>
+                </lable>
+                {{ form.phone_number }}
+
+                <lable for="id_note">
+                    <h2 style="color: black; margin-top: 30px">상담 신청 사유</h2>>
+                </lable>
+                {{ form.note }}
+            </div>
+        </div>
+
+        <div class="row" style="margin-top: 20px;">
+            <div class="col-sm-12" style="text-align: center;">
+                <button type="submit" class="btn btn-primary">수정</button>
+                <a href="{% url 'payment' form.instance.id %}" class="btn btn-md active" role="button" aria-pressed="true">결제</a>
+                <a href="{% url 'consultations' 1 %}" class="btn btn_danger btn-md active" role="button" aria-pressed="true">취소</a>
+            </div>
+        </div>
+    </form>
+
+    <form action="{% url 'consultation_delete' form.instance.id %}" method="POST">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-primary">삭제</button>
+    </form>
+{% endblock %}

@@ -1,0 +1,156 @@
+{% extends "base.html" %}
+
+{% block title %}post_all2.html{% endblock %}
+
+{% block content %}
+<div id="content">
+<title>심리 테스트</title>
+<body>
+<h1>공황장애 진단</h1>
+	<form name="PForm" method="post" action="{% url 'result' %}">
+        {% csrf_token %}
+
+		<h4>※ 당신의 연령대를 고르세요. ※</h4>
+			<select name = "old" size = "1">
+				<option value = "10" selected>10대</option>
+				<option value = "20">20대</option>
+				<option value = "30">30대</option>
+				<option value = "40">40대</option>
+				<option value = "50">50대</option>
+			</select>
+<hr>
+	<p>
+		<h4>※ 당신의 성별을 고르세요. ※</h4>
+		<input type = "radio" name = "gender" value = "남자" checked>
+		남자
+		<input type = "radio" name = "gender" value = "여자">
+		여자
+	</p>
+<br>
+	<hr>
+	<br/>
+	<p>
+		<b><h4>※ 다음글을 보고 해당한다면 '예', 아니면 '아니오' 체크해주세요. ※</h4></b>
+		
+		1. 심장이 두근거리고 맥박이 빨라진다. &nbsp; &nbsp; 
+		<input type = "radio" name = "food" value = "예" checked>
+		예
+		<input type = "radio" name = "food" value = "아니오">
+		아니오
+<br/>
+<br/>
+		2. 심하게 땀을 흘린다. &nbsp; &nbsp;
+		<input type = "radio" name = "annoying" value = "예" checked>
+		예
+		<input type = "radio" name = "annoying" value = "아니오">
+		아니오
+<br/>
+<br/>
+		3. 가슴이 아프고 답답하다.&nbsp; &nbsp;
+		<input type = "radio" name = "concentration" value = "예" checked>
+		예
+		<input type = "radio" name = "concentration" value = "아니오">
+		아니오
+<br/>
+<br/>
+		4. 숨이 가쁘고 막히는 느낌이 든다.&nbsp; &nbsp;
+		<input type = "radio" name = "hope" value = "예" checked>
+		예
+		<input type = "radio" name = "hope" value = "아니오">
+		아니오
+<br/>
+<br/>
+
+		5. 몸이 떨리거나 전율을 느낀다. &nbsp; &nbsp;
+		<input type = "radio" name = "sin" value = "예" checked>
+		예
+		<input type = "radio" name = "sin" value = "아니오">
+		아니오
+<br/>
+<br/>
+
+		6. 현기증,불안정감,머리가멍함,어지러움이있다. &nbsp; &nbsp;
+		<input type = "radio" name = "hate" value = "예" checked>
+		예
+		<input type = "radio" name = "hate" value = "아니오">
+		아니오
+<br/>
+<br/>
+
+		7. 오한이 나고 얼굴이 화끈거린다. &nbsp; &nbsp;
+		<input type = "radio" name = "cry" value = "예" checked>
+		예
+		<input type = "radio" name = "cry" value = "아니오">
+		아니오
+<br/>
+<br/>
+
+		8. 주위가 비현실적인것 같고, 자신에서 분리된 느낌이다. &nbsp; &nbsp;
+		<input type = "radio" name = "friend" value = "예" checked>
+		예
+		<input type = "radio" name = "friend" value = "아니오">
+		아니오
+<br/>
+<br/>
+
+
+		9.감각의 이상이 있다.&nbsp; &nbsp;
+		<input type = "radio" name = "perfect" value = "예" checked>
+		예
+		<input type = "radio" name = "perfect" value = "아니오">
+		아니오
+<br/>
+<br/>
+
+		10. 죽을 것 같은 느낌이 든다. &nbsp; &nbsp;
+		<input type = "radio" name = "comfortable" value = "예" checked>
+		예
+		<input type = "radio" name = "comfortable" value = "아니오">
+		아니오
+<br/>
+<br/>
+<hr>
+<br/>
+		<b><h4>※ 요즘에 힘든일이 있으신가요? 있으시다면 왜, 무엇때문에 그런지 구체적으로 적어주세요. ※</h4></b>
+	<textarea name = "ta1" rows = "7" cols = "40" wrap = "virtual">이곳에다가 적어주세요</textarea>
+
+<hr>
+
+<input type="submit" value="제출하기">
+</form>
+		
+</div>
+
+</div>
+		
+<!--{% for post in posts %}
+    <h2><a href='{{ post.get_absolute_url }}'>{{ post.title }}</a></h2>
+    {{ post.modify_date|date:"N d, Y" }}
+    <p>{{ post.description }}</p>
+{% endfor %}
+
+<br/>
+
+<div>
+    <span>
+        {% if page_obj.has_previous %}
+            <a href="?page={{ page_obj.previous_page_number }}">PreviousPage</a>
+        {% endif %}
+      
+        Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}
+      
+        {% if page_obj.has_next %}
+            <a href="?page={{ page_obj.next_page_number }}">NextPage</a>
+        {% endif %}
+    </span>
+
+</div>-->
+
+
+</div>
+
+
+</body>
+</html>
+
+{% endblock %}

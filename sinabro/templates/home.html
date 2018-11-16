@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block extrastyle %}{% static "css/home.css" %}{% endblock %}
+
+{% block content %}﻿
+
+
+<div class="row">
+    <div class="col-sm-12" style="text-align: center">
+        <img src="static/img/main.jpg" style="    height: 400px;
+  						      width: 100%;" } >
+    </div>
+</div>
+
+
+<br>
+<center>
+
+
+<table border="1"; width="40%";>
+<div class="col-sm-12" style="text-align: center">
+	<center>
+	<figcaption>
+	
+		<p><b>◈ 공지사항 ◈</b></p>
+	</figcaption>
+	
+	</center>
+	
+		<tr align="center">
+			<th><a href="{% url 'notice' %}">☞ 시나브로가 이렇게 업데이트 되었습니다! </a></th>
+		</tr>
+		<tr align="center">
+			<th><a href="{% url 'notice' %}">☞ 조선일보에 시나브로가 보도되었습니다! </a></th>
+		</tr>
+		<tr align="center">
+			<th><a href="{% url 'notice' %}">☞ 저희 시나브로가 성장할수있도록 후원해주세요! </a></th>
+		</tr>
+	
+</div>
+</table>
+
+
+</center>
+</br>
+
+
+
+
+
+
+    <div class="row" style="margin-top: 20px">
+    <div class="col-sm-12" style="text-align: center">
+        <a href="{% url 'consultants' 1 %}">
+            <img src="static/img/1.jpg" alt="힐링이미지02" style="width: 260px; height: 250px;">
+        </a>
+		<a href="/blog/post0/">
+        <img src="static/img/2.jpg" alt="힐링이미지02" style="width: 260px; height: 250px;">
+	    </a>
+        <img src="/static/img/3.jpg" alt="힐링이미지02" style="width: 260px; height: 250px;">
+    </div>
+</div>
+
+{% endblock content %}

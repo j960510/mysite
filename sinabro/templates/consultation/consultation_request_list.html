@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="row" style="margin-top:150px">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">상담사</th>
+                    <th scope="col">예약내용</th>
+                    <th scope="col">상태</th>
+                    <th scope="col">예약일자</th>
+                    <th scope="col">생성일자</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for request in consultation_requests %}
+                    <tr style="color: {% if not request.deleted_at %}black{% endif %}">
+                        <th scope="col">{{ forloop.counter }}</th>
+                        <th scope="col">{{ request.consultant.name }}</th>
+                        <th scope="col">
+                            <a href="{% url 'consultation' request.id %}" style="color: black">
+                                {{ request.note|truncatechars:50 }}
+                            </a>
+                        </th>
+                        <th scope="col">{{ request.status }}</th>
+                        <th scope="col">{{ request.reservation_time }}</th>
+                        <th scope="col">{% firstof request.created_at %}</th>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <div class="col-sm-12" style="text-align: center;">
+            {% for number in pages %}
+                <a href="{% url 'consultations' number %}"
+                   style="color: {% if number == current_page %}#black;{% else %} black {% endif %}">
+                    {{ number }}
+                </a>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
